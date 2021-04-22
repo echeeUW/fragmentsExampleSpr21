@@ -1,9 +1,19 @@
 package edu.uw.echee.fragmentsexamplespr21
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+
+//private const val ACCOUNT_KEY = "ACCOUNT_KEY"
+//
+//fun startHomeActivity(context: Context, account: Account) = with(context) {
+//    startActivity(Intent(this, MainActivity::class.java).apply {
+//        putExtra(ACCOUNT_KEY, account)
+//    })
+//}
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,3 +34,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp() = navController.navigateUp()
 }
+
+/*
+bottomNav.setOnNavigationItemSelectedListener(this@HomeActivity)
+override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.... ->
+            else -> false
+*/
