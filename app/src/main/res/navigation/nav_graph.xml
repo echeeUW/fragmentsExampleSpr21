@@ -9,24 +9,18 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="edu.uw.echee.fragmentsexamplespr21.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_groupsFragment2"
-            app:destination="@id/groupsFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_notificationsFragment"
-            app:destination="@id/notificationsFragment" />
         <argument
-            android:name="numOfPosts"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:name="account"
+            app:argType="edu.uw.echee.fragmentsexamplespr21.Account"
+            app:nullable="true" />
     </fragment>
 
     <fragment
         android:id="@+id/groupsFragment"
         android:name="edu.uw.echee.fragmentsexamplespr21.GroupsFragment"
-        android:label="fragment_groups"
+        android:label="Groups"
         tools:layout="@layout/fragment_groups" >
         <argument
             android:name="numOfGroups"
@@ -35,13 +29,31 @@
             android:name="favoriteGroup"
             app:argType="string" />
     </fragment>
+
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="edu.uw.echee.fragmentsexamplespr21.NotificationsFragment"
-        android:label="fragment_notifications"
+        android:label="Notifications"
         tools:layout="@layout/fragment_notifications" >
         <argument
             android:name="numOfNotifications"
             app:argType="integer" />
     </fragment>
+
+    <action
+        android:id="@+id/action_global_groupsFragment"
+        app:destination="@id/groupsFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false" />
+    <action
+        android:id="@+id/action_global_notificationsFragment"
+        app:destination="@id/notificationsFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/notificationsFragment" />
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/nav_graph" />
 </navigation>
